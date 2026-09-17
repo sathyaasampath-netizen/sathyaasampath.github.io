@@ -1,1 +1,695 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sathiyabama Sampath | Data Analyst</title>
 
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            scroll-behavior: smooth;
+        }
+
+        body {
+            font-family: Arial, Helvetica, sans-serif;
+            line-height: 1.6;
+            color: #1f2937;
+            background: #f8fafc;
+        }
+
+        nav {
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+            background: #ffffff;
+            border-bottom: 1px solid #e5e7eb;
+            padding: 16px 8%;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo {
+            font-size: 22px;
+            font-weight: bold;
+            color: #2563eb;
+        }
+
+        nav ul {
+            list-style: none;
+            display: flex;
+            gap: 25px;
+        }
+
+        nav a {
+            text-decoration: none;
+            color: #374151;
+            font-weight: 500;
+        }
+
+        nav a:hover {
+            color: #2563eb;
+        }
+
+        .hero {
+            min-height: 90vh;
+            display: flex;
+            align-items: center;
+            padding: 70px 8%;
+            background: linear-gradient(135deg, #eff6ff, #ffffff);
+        }
+
+        .hero-content {
+            max-width: 850px;
+        }
+
+        .hero h1 {
+            font-size: 56px;
+            color: #111827;
+            margin-bottom: 10px;
+        }
+
+        .hero h2 {
+            font-size: 28px;
+            color: #2563eb;
+            margin-bottom: 20px;
+        }
+
+        .hero p {
+            font-size: 19px;
+            color: #4b5563;
+            max-width: 750px;
+            margin-bottom: 30px;
+        }
+
+        .buttons {
+            display: flex;
+            gap: 15px;
+            flex-wrap: wrap;
+        }
+
+        .btn {
+            display: inline-block;
+            padding: 12px 24px;
+            border-radius: 8px;
+            text-decoration: none;
+            font-weight: bold;
+            border: 1px solid #2563eb;
+        }
+
+        .btn-primary {
+            background: #2563eb;
+            color: white;
+        }
+
+        .btn-secondary {
+            color: #2563eb;
+            background: white;
+        }
+
+        section {
+            padding: 80px 8%;
+        }
+
+        .section-title {
+            text-align: center;
+            font-size: 34px;
+            margin-bottom: 45px;
+            color: #111827;
+        }
+
+        .about {
+            max-width: 900px;
+            margin: auto;
+            text-align: center;
+            font-size: 18px;
+            color: #4b5563;
+        }
+
+        .skills-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 22px;
+        }
+
+        .skill-card {
+            background: white;
+            padding: 28px;
+            border-radius: 12px;
+            border: 1px solid #e5e7eb;
+            box-shadow: 0 5px 20px rgba(0,0,0,0.05);
+        }
+
+        .skill-card h3 {
+            color: #2563eb;
+            margin-bottom: 12px;
+        }
+
+        .skill-card p {
+            color: #4b5563;
+        }
+
+        .experience-card {
+            max-width: 950px;
+            margin: 0 auto 30px;
+            background: white;
+            padding: 30px;
+            border-radius: 12px;
+            border-left: 5px solid #2563eb;
+            box-shadow: 0 5px 20px rgba(0,0,0,0.05);
+        }
+
+        .experience-card h3 {
+            font-size: 23px;
+            color: #111827;
+        }
+
+        .date {
+            color: #2563eb;
+            font-weight: bold;
+            margin: 5px 0 15px;
+        }
+
+        .experience-card ul {
+            padding-left: 20px;
+        }
+
+        .experience-card li {
+            margin-bottom: 8px;
+        }
+
+        .projects-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 25px;
+        }
+
+        .project-card {
+            background: white;
+            padding: 28px;
+            border-radius: 12px;
+            border: 1px solid #e5e7eb;
+            box-shadow: 0 5px 20px rgba(0,0,0,0.05);
+        }
+
+        .project-card h3 {
+            color: #111827;
+            margin-bottom: 12px;
+        }
+
+        .project-card p {
+            color: #4b5563;
+            margin-bottom: 15px;
+        }
+
+        .tech {
+            color: #2563eb;
+            font-size: 14px;
+            font-weight: bold;
+        }
+
+        .education {
+            max-width: 850px;
+            margin: auto;
+        }
+
+        .education-card {
+            background: white;
+            padding: 25px;
+            margin-bottom: 20px;
+            border-radius: 12px;
+            border: 1px solid #e5e7eb;
+        }
+
+        .contact {
+            background: #111827;
+            color: white;
+            text-align: center;
+        }
+
+        .contact .section-title {
+            color: white;
+        }
+
+        .contact p {
+            margin-bottom: 10px;
+        }
+
+        .contact a {
+            color: #93c5fd;
+            text-decoration: none;
+        }
+
+        footer {
+            background: #030712;
+            color: #9ca3af;
+            text-align: center;
+            padding: 20px;
+            font-size: 14px;
+        }
+
+        @media (max-width: 768px) {
+            nav {
+                flex-direction: column;
+                gap: 12px;
+            }
+
+            nav ul {
+                gap: 12px;
+                flex-wrap: wrap;
+                justify-content: center;
+            }
+
+            .hero h1 {
+                font-size: 40px;
+            }
+
+            .hero h2 {
+                font-size: 23px;
+            }
+
+            section {
+                padding: 60px 6%;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <!-- Navigation -->
+    <nav>
+        <div class="logo">Sathiyabama Sampath</div>
+
+        <ul>
+            <li><a href="#about">About</a></li>
+            <li><a href="#skills">Skills</a></li>
+            <li><a href="#experience">Experience</a></li>
+            <li><a href="#projects">Projects</a></li>
+            <li><a href="#education">Education</a></li>
+            <li><a href="#contact">Contact</a></li>
+        </ul>
+    </nav>
+
+
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="hero-content">
+
+            <h1>Sathiyabama Sampath</h1>
+
+            <h2>Data Analyst | SQL | Python | Power BI</h2>
+
+            <p>
+                Data Analytics professional and Master's student with experience
+                in data analysis, SQL, Python, ETL, data validation, reporting,
+                quality testing, troubleshooting, and business intelligence.
+                I enjoy transforming data into meaningful insights and
+                practical business solutions.
+            </p>
+
+            <div class="buttons">
+                <a href="#projects" class="btn btn-primary">
+                    View My Projects
+                </a>
+
+                <a href="#contact" class="btn btn-secondary">
+                    Contact Me
+                </a>
+
+                <a href="https://github.com/sathyaasampath-netizen"
+                   target="_blank"
+                   class="btn btn-secondary">
+                    GitHub
+                </a>
+            </div>
+
+        </div>
+    </section>
+
+
+    <!-- About -->
+    <section id="about">
+        <h2 class="section-title">About Me</h2>
+
+        <div class="about">
+            <p>
+                I am a Data Analytics professional currently pursuing a
+                Master's degree in Data Analytics at the University of
+                Niagara Falls, Canada.
+            </p>
+
+            <br>
+
+            <p>
+                My professional background includes experience in IT system
+                support, data operations, production troubleshooting,
+                reporting, data validation, and business processes.
+                At TCS, I supported API services, deployments, monitoring,
+                incident management, and root cause analysis.
+            </p>
+
+            <br>
+
+            <p>
+                During my Data Analytics Internship at The Clean Divorce,
+                I worked with Wix Studio workflows, booking systems,
+                email automation, client journeys, requirements gathering,
+                testing, and workflow improvements.
+            </p>
+        </div>
+    </section>
+
+
+    <!-- Skills -->
+    <section id="skills">
+        <h2 class="section-title">Technical Skills</h2>
+
+        <div class="skills-grid">
+
+            <div class="skill-card">
+                <h3>Programming & Analytics</h3>
+                <p>
+                    Python, Pandas, NumPy, Scikit-learn, R,
+                    Exploratory Data Analysis, Statistical Analysis,
+                    Predictive Modeling, Feature Engineering,
+                    Model Evaluation, Data Cleaning
+                </p>
+            </div>
+
+            <div class="skill-card">
+                <h3>SQL & Databases</h3>
+                <p>
+                    SQL, MySQL, Joins, Window Functions, CTEs,
+                    Stored Procedures, Triggers, Analytical Views,
+                    Data Validation Queries, SQL-Based Data Testing
+                </p>
+            </div>
+
+            <div class="skill-card">
+                <h3>Cloud & Data Platforms</h3>
+                <p>
+                    Microsoft Azure (Basic), Snowflake (Basic),
+                    Data Warehousing Concepts, ETL Processing,
+                    Data Pipelines, Source-to-Target Validation
+                </p>
+            </div>
+
+            <div class="skill-card">
+                <h3>BI & Visualization</h3>
+                <p>
+                    Power BI, Power Query, DAX, Tableau,
+                    Advanced Excel, Dashboard Development,
+                    KPI Reporting, Data Visualization
+                </p>
+            </div>
+
+            <div class="skill-card">
+                <h3>Data Quality & Testing</h3>
+                <p>
+                    Data Validation, Data Quality Testing,
+                    ETL Testing, Functional Testing,
+                    Workflow Testing, End-to-End Testing,
+                    Deployment Validation, Root Cause Analysis
+                </p>
+            </div>
+
+            <div class="skill-card">
+                <h3>Enterprise Tools</h3>
+                <p>
+                    Splunk Enterprise, ServiceNow, PagerDuty,
+                    TPAM, CISAR, Jupyter Notebook,
+                    Visual Studio Code, Git/GitHub, SPSS
+                </p>
+            </div>
+
+        </div>
+    </section>
+
+
+    <!-- Experience -->
+    <section id="experience">
+        <h2 class="section-title">Experience</h2>
+
+        <div class="experience-card">
+
+            <h3>Data Analytics Intern — The Clean Divorce</h3>
+
+            <div class="date">
+                July 2026 – September 2026
+            </div>
+
+            <ul>
+                <li>
+                    Configured and optimized Wix Studio automated workflows
+                    to improve client booking and communication processes.
+                </li>
+
+                <li>
+                    Designed, tested, and implemented scheduling solutions,
+                    QR-code booking flows, and availability configurations.
+                </li>
+
+                <li>
+                    Collaborated with stakeholders to gather business
+                    requirements, troubleshoot platform limitations,
+                    and implement workflow improvements.
+                </li>
+
+                <li>
+                    Performed end-to-end testing of website features,
+                    booking systems, email automation workflows,
+                    and client portal functionality.
+                </li>
+
+                <li>
+                    Analyzed user workflows and business requirements
+                    to identify process improvements and enhance the
+                    client experience.
+                </li>
+
+                <li>
+                    Reviewed and updated email automation workflows
+                    to align with a structured client roadmap and
+                    portal experience.
+                </li>
+            </ul>
+
+        </div>
+
+
+        <div class="experience-card">
+
+            <h3>System Engineer — Tata Consultancy Services (TCS)</h3>
+
+            <div class="date">
+                May 2015 – April 2018
+            </div>
+
+            <ul>
+                <li>
+                    Supported and monitored 40+ API services and
+                    production applications.
+                </li>
+
+                <li>
+                    Performed production troubleshooting, incident
+                    management, and root cause analysis.
+                </li>
+
+                <li>
+                    Supported application deployments and deployment
+                    validation activities.
+                </li>
+
+                <li>
+                    Used Splunk for application monitoring,
+                    troubleshooting, and log analysis.
+                </li>
+
+                <li>
+                    Worked with bulk-loader and Camel route processes
+                    supporting data movement and application workflows.
+                </li>
+            </ul>
+
+        </div>
+
+
+        <div class="experience-card">
+
+            <h3>Finance Executive — S.R Cars</h3>
+
+            <div class="date">
+                July 2018 – December 2023
+            </div>
+
+            <ul>
+                <li>
+                    Managed billing, vendor payments, inventory records,
+                    and financial reporting.
+                </li>
+
+                <li>
+                    Performed data reconciliation and validation of
+                    financial and inventory records.
+                </li>
+
+                <li>
+                    Prepared business reports and analyzed operational
+                    data to support decision-making.
+                </li>
+            </ul>
+
+        </div>
+
+    </section>
+
+
+    <!-- Projects -->
+    <section id="projects">
+        <h2 class="section-title">Projects</h2>
+
+        <div class="projects-grid">
+
+            <div class="project-card">
+                <h3>FoodExpressDB</h3>
+
+                <p>
+                    SQL and Python-based data analytics project involving
+                    database development, data analysis, queries,
+                    and business insights.
+                </p>
+
+                <div class="tech">
+                    SQL | Python | MySQL | Pandas
+                </div>
+            </div>
+
+
+            <div class="project-card">
+                <h3>Cardiovascular Disease Risk Prediction</h3>
+
+                <p>
+                    Machine learning project focused on analyzing health
+                    data, developing predictive models, feature engineering,
+                    and evaluating model performance.
+                </p>
+
+                <div class="tech">
+                    Python | Pandas | Scikit-learn | Machine Learning
+                </div>
+            </div>
+
+
+            <div class="project-card">
+                <h3>Financial Market Analysis</h3>
+
+                <p>
+                    Data analytics project examining relationships between
+                    macroeconomic indicators and stock market performance
+                    using statistical analysis and predictive modeling.
+                </p>
+
+                <div class="tech">
+                    Python | ML | Tableau | Data Analysis
+                </div>
+            </div>
+
+
+            <div class="project-card">
+                <h3>Finance Customer Analytics Dashboard</h3>
+
+                <p>
+                    Tableau-based analytics project integrating customer
+                    segmentation, predictive forecasting, and prescriptive
+                    scenario analysis.
+                </p>
+
+                <div class="tech">
+                    Tableau | Predictive Analytics | Customer Analytics
+                </div>
+            </div>
+
+
+            <div class="project-card">
+                <h3>Mobile Market Dashboard</h3>
+
+                <p>
+                    Business intelligence dashboard designed to analyze
+                    mobile market data and present key performance indicators
+                    through interactive visualizations.
+                </p>
+
+                <div class="tech">
+                    Power BI | Power Query | DAX | Excel
+                </div>
+            </div>
+
+        </div>
+    </section>
+
+
+    <!-- Education -->
+    <section id="education">
+        <h2 class="section-title">Education</h2>
+
+        <div class="education">
+
+            <div class="education-card">
+                <h3>Master of Data Analytics</h3>
+                <p>
+                    University of Niagara Falls, Canada
+                </p>
+            </div>
+
+            <div class="education-card">
+                <h3>Bachelor of Engineering – Computer Science</h3>
+                <p>
+                    VSB Engineering College, India
+                </p>
+            </div>
+
+        </div>
+    </section>
+
+
+    <!-- Contact -->
+    <section id="contact" class="contact">
+
+        <h2 class="section-title">Let's Connect</h2>
+
+        <p>
+            I am open to opportunities in Data Analytics, Business
+            Intelligence, Data Quality, ETL Testing, and QE/Data Testing.
+        </p>
+
+        <br>
+
+        <p>
+            Email:
+            <a href="mailto:sathyaasampath@gmail.com">
+                sathyaasampath@gmail.com
+            </a>
+        </p>
+
+        <p>
+            GitHub:
+            <a href="https://github.com/sathyaasampath-netizen"
+               target="_blank">
+                github.com/sathyaasampath-netizen
+            </a>
+        </p>
+
+    </section>
+
+
+    <footer>
+        © 2026 Sathiyabama Sampath | Data Analytics Portfolio
+    </footer>
+
+</body>
+</html>
